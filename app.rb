@@ -17,7 +17,12 @@ get '/anothersecret' do
   'the plant is called Vera'
 end
 
-get '/cat' do
-  @random_cat_name = ["Amigo", "Misty", "Almond"].sample
+get '/random_cat' do
+  @cat_name = ["Amigo", "Misty", "Almond"].sample
+  erb(:index)
+end
+
+get '/named_cat' do
+  @cat_name = params[:cat_name]
   erb(:index)
 end
