@@ -17,12 +17,17 @@ get '/anothersecret' do
   'the plant is called Vera'
 end
 
-get '/random_cat' do
+get '/random-cat' do
   @cat_name = ["Amigo", "Misty", "Almond"].sample
   erb(:index)
 end
 
-get '/named_cat' do
+post '/named-cat' do
+  p params
   @cat_name = params[:cat_name]
   erb(:index)
+end
+
+get '/cat-form' do
+  erb(:form)
 end
